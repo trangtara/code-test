@@ -2,7 +2,7 @@ const expense = [1228,1584,1258,1692,1509,1927,1177,1854,1946,1815,1925,1531,152
 
 const target = 2020
 
-// Find the two entries that sum to 2020 and find their products
+// Find ALL two entries that sum to 2020 and find their products
 const twoEntrySum = (arr, target) => {
   arr.sort((a, b) => a - b)
 
@@ -25,23 +25,17 @@ const twoEntrySum = (arr, target) => {
   return twoEntries
 }
 
-let twoEntrySumHTML = ''
-let twoEntryProductHTML = ''
-
 const twoEntryResults = twoEntrySum(expense, target)
 
 twoEntryResults.forEach((arr) => {
-  twoEntrySumHTML += `<p>${arr}</p>`
+  document.getElementById('twoEntrySum').innerHTML += `<p>${arr}</p>`
 })
 
 const twoEntryProducts = twoEntryResults.forEach((result) => {
-  twoEntryProductHTML += `<p>${result[0] * result[1]}</p>`
+  document.getElementById('twoEntryProduct').innerHTML += `<p>${result[0] * result[1]}</p>`
 })
 
-document.getElementById('twoEntrySum').innerHTML = twoEntrySumHTML
-document.getElementById('twoEntryProduct').innerHTML = twoEntryProductHTML
-
-// Find the three entries that sum to 2020 and find their products
+// Find ALL three entries that sum to 2020 and find their products
 const threeEntrySum = (arr, target) => {
   arr.sort((a, b) => { 
     return a - b 
@@ -68,21 +62,16 @@ const threeEntrySum = (arr, target) => {
   return threeEntries
 }
 
-let threeEntrySumHTML = ''
-let threeEntryProductHTML = ''
-
 const threeEntryResults = threeEntrySum(expense, target)
 
 threeEntryResults.forEach((arr) => {
-  threeEntrySumHTML += `<p>${arr}</p>`
+  document.getElementById('threeEntrySum').innerHTML += `<p>${arr}</p>`
 })
 
 const threeEntryProducts = threeEntryResults.forEach((result) => {
-  threeEntryProductHTML += `<p>${result[0] * result[1] * result[2]}</p>`   
+  document.getElementById('threeEntryProduct').innerHTML += `<p>${result[0] * result[1] * result[2]}</p>`   
 })
 
-document.getElementById('threeEntrySum').innerHTML = threeEntrySumHTML
-document.getElementById('threeEntryProduct').innerHTML = threeEntryProductHTML
 
 
 
